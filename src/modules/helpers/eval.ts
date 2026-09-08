@@ -216,7 +216,7 @@ function resolveProperty(entrypoint: unknown, key: string): unknown {
         return undefined;
       }
 
-      return entrypoint?.[key as keyof typeof entrypoint];
+      return resolveProperty(entrypoint, key);
     }
 
     case 'object': {
